@@ -1,9 +1,11 @@
 # P_test_py_web
 
 git config --local user.email "20flint12@gmail.com"
-git config --local user.name "Sergey"
+//git config --local user.name "Sergey"
+git config --local user.name "20flint12"
 
 https://github.com/
+
 20flint12 f88888878
 
 
