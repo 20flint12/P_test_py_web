@@ -74,3 +74,7 @@ u166087
 768545367
 
 testastroflint.cloudcontrolled.com/polls
+
+testastroflint.cloudcontrolled.com/admin
+kostia
+098776789
