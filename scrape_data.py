@@ -3,15 +3,39 @@
 # https://dev.locu.com/console/
 # 20flint12@gmail.com 87
 
+# http://www.timeserver.ru/time.html
+
 import requests
 from bs4 import BeautifulSoup
+import time
 
-r = requests.get("http://mail.ru")
+while 1:
 
-# print r.content
+    time.sleep(1)
 
-soup = BeautifulSoup(r.content)
+    r = requests.get("http://www.timeserver.ru/time.html")
+    # print r.content
 
-# print soup.prettify()
+    soup = BeautifulSoup(r.content)
+    # print soup.prettify()
+    # print soup.find_all("a")
 
-print soup.find_all("a")
+    for link in soup.find_all("a"):
+        # print link
+        # print link.get('href')
+        # print link.get("href")
+
+        # print link.text
+        pass
+        # print "<a href='%s'>%s</a>" %(link.get("href"), link.text)
+
+    g_data = soup.find_all("div", {"class": "time"})
+    # print g_data
+
+    for item in g_data:
+        # print item.text
+        # print item
+        print item.contents
+        # print item.contents[1].text[2]
+
+
