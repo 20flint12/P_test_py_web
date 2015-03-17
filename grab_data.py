@@ -24,4 +24,4 @@ def locu_search(query):
         print item['name'], item['phone']
 
 
-locu_search("new york")
+locu_search("boston")
