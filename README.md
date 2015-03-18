@@ -2,6 +2,7 @@
 
 git config --local user.email "20flint12@gmail.com"
 git config --local user.name "20flint12"
+git config --local http.sslverify false
 
 https://github.com/
 20flint12 88888878f
