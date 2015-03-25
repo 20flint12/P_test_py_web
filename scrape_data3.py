@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # coding: utf8
 
+import os
+import urllib
+import urllib2
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -33,11 +37,6 @@ def get_news():
         str_news = time_artTags.text
         # print (str_news)
 
-        # timeTags = item.find("div", {"class": "article__time"})
-        # titlTags = item.find("div", {"class": "article__title"})
-        # str2 = timeTags.text + titlTags.text
-        # print str2
-
 
     if str_last_time == str_news:
         return None
@@ -46,35 +45,21 @@ def get_news():
         return str_last_time
 
 
-    # print g_data[0]
-    # print "\n"
-    # print "1#"*40
-    # print g_data[1]
-    # print "\n"
-    # print "2#"*40
-    # print g_data[2]
-    # print "\n"
-    # print "3#"*40
-
-    # tabTags = g_data[2].find_all("table")
-    #
-    # trTags = tabTags[1].find_all("tr")
-    # # for tr in trTags:
-    # #     print tr.text
-    # #
-    # #     # line = u(tr.text)
-    # #     str_re = u"Давление (на станции) (.*) мм.рт.ст."
-    # #     # res = re.search(str_re, str)
-    # #     # if res:
-    # #     #     print res.group(1)  # pressure
-    #
-    #
-    # out_str = trTags[1].text
-    # # print trTags[1].text
-    #
-    # return out_str
-
 
 print (get_news())
 
-# print (get_temperature())
+
+
+
+
+
+
+url = "http://icecat.biz/p/toshiba/pscbxe-01t00een/satellite-pro-notebooks-4051528049077-Satellite+Pro+C8501GR-17732197.html"
+html = urllib2.urlopen(url)
+soup = BeautifulSoup(html)
+
+imgs = soup.findAll("div", {"class":"thumb-pic"})
+print imgs
+for img in imgs:
+    imgUrl = img.a['href'].split("imgurl=")[0]
+    urllib.urlretrieve(imgUrl, os.path.basename(imgUrl))
