@@ -52,14 +52,32 @@ print (get_news())
 
 
 
+#
+#
+# url = "http://icecat.biz/p/toshiba/pscbxe-01t00een/satellite-pro-notebooks-4051528049077-Satellite+Pro+C8501GR-17732197.html"
+# html = urllib2.urlopen(url)
+# soup = BeautifulSoup(html)
+#
+# imgs = soup.findAll("div", {"class":"thumb-pic"})
+# print imgs
+# for img in imgs:
+#     imgUrl = img.a['href'].split("imgurl=")[0]
+#     urllib.urlretrieve(imgUrl, os.path.basename(imgUrl))
 
 
-url = "http://icecat.biz/p/toshiba/pscbxe-01t00een/satellite-pro-notebooks-4051528049077-Satellite+Pro+C8501GR-17732197.html"
-html = urllib2.urlopen(url)
-soup = BeautifulSoup(html)
-
-imgs = soup.findAll("div", {"class":"thumb-pic"})
-print imgs
-for img in imgs:
-    imgUrl = img.a['href'].split("imgurl=")[0]
-    urllib.urlretrieve(imgUrl, os.path.basename(imgUrl))
+def download_photo(self, img_url, filename):
+    try:
+        image_on_web = urllib.urlopen(img_url)
+        if image_on_web.headers.maintype == 'image':
+            buf = image_on_web.read()
+            path = os.getcwd() + DOWNLOADED_IMAGE_PATH
+            file_path = "%s%s" % (path, filename)
+            downloaded_image = file(file_path, "wb")
+            downloaded_image.write(buf)
+            downloaded_image.close()
+            image_on_web.close()
+        else:
+            return False
+    except:
+        return False
+    return True
