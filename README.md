@@ -79,3 +79,30 @@ testastroflint.cloudcontrolled.com/polls
 testastroflint.cloudcontrolled.com/admin
 kostia
 098776789
+
+
+
+
+
+https://www.cloudcontrol.com/dev-center/platform-documentation#version-control-&-images
+
+cctrlapp testastroflint details
+cctrlapp -l
+cctrlapp testastroflint user 
+cctrluser key
+
+
+git remote add cloudcontrol ssh://testastroflint@cloudcontrolled.com/repository.git
+cctrlapp testastroflint/default details
+cctrlapp testastroflint/default deploy
+cctrlapp testastroflint/default addon.list
+
+итого это только в ветке master !!!
+
+git push cloudcontrol master
+cctrlapp testastroflint/default deploy  87
+
+
+
+pip install gunicorn
+
