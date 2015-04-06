@@ -8,6 +8,11 @@ https://github.com/
 20flint12 88888878f
 
 
+git remote add origin https://github.com/20flint12/P_python-django-example-flint.git
+git remote add ccOrigin ssh://testastroflint@cloudcontrolled.com/repository.git
+git remote -v
+
+
 
 
 # https://www.cloudcontrol.com/console/account/flintcloudcontrol
@@ -79,3 +84,14 @@ testastroflint.cloudcontrolled.com/polls
 testastroflint.cloudcontrolled.com/admin
 kostia
 098776789
+
+
+
+
+Install virtualenv via pip:
+
+$ pip install virtualenv
+
+Create a virtual environment for a project:
+$ cd my_project_folder
+$ virtualenv ENV_ACER
