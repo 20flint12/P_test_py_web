@@ -84,14 +84,3 @@ testastroflint.cloudcontrolled.com/polls
 testastroflint.cloudcontrolled.com/admin
 kostia
 098776789
-
-
-
-
-Install virtualenv via pip:
-
-$ pip install virtualenv
-
-Create a virtual environment for a project:
-$ cd my_project_folder
-$ virtualenv ENV_ACER

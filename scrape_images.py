@@ -3,7 +3,7 @@
 
 import os
 import urllib
-import urllib2
+# import urllib2
 
 
 import requests
@@ -25,15 +25,22 @@ def download_photo(img_url, filename):
     #     if exception.errno != errno.EEXIST:
     #         raise
 
+
+    print ("********")
+    print (os.getcwd())
+    print ("========")
+
+
     try:
         image_on_web = urllib.urlopen(img_url)
         # print image_on_web
         if image_on_web.headers.maintype == 'image':
             # print "$$"
             buf = image_on_web.read()
-            path = os.getcwd() + "/scratched_images2"
+            path = os.getcwd() + "storage/sdcard0"
+            # path = os.getcwd() + "/scratched_images2"
             file_path = "%s/%s" % (path, filename)
-            # print "file_path:", file_path
+            print ("file_path:", file_path)
 
             if not os.path.exists(path):
                 os.makedirs(path)
