@@ -2,8 +2,10 @@
 #!/usr/bin/python
 
 
-import sys
-sys.path.append('/usr/lib/python2.7/dist-packages')
+# https://saxenarajat99.wordpress.com/2014/10/04/optical-character-recognition-in-python/
+
+# import sys
+# sys.path.append('/usr/lib/python2.7/dist-packages')
 
 
 import tesseract
