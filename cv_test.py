@@ -1,8 +1,17 @@
+# coding: utf8
+#!/usr/bin/python
+
 __author__ = 'sergey'
 
 
+import sys
+
+# sys.path.append('/usr/local/lib/python2.7/site-packages')
+sys.path.append('/usr/lib/python2.7/dist-packages')
+
 import numpy as np
 import cv2
+# ImportError: /usr/lib/python2.7/dist-packages/cv2.so: undefined symbol: _ZN2cv23adaptiveBilateralFilterERKNS_11_InputArrayERKNS_12_OutputArrayENS_5Size_IiEEddNS_6Point_IiEEi
 
 # # Create a black image
 # img = np.zeros((512,512,3), np.uint8)
@@ -116,7 +125,8 @@ cap = cv2.VideoCapture(0)
 # Define the codec and create VideoWriter object
 # fourcc = cv2.VideoWriter_fourcc('M','J','P','G')
 fourcc = cv2.cv.CV_FOURCC(*'XVID')
-out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
+# out = cv2.VideoWriter('output.avi',fourcc, 20.0, (640,480))
+out = cv2.VideoWriter('output.avi',fourcc, 5.0, (640,480))
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -137,11 +147,7 @@ while cap.isOpened():
 cap.release()
 out.release()
 cv2.destroyAllWindows()
-
-
-
-
-
+qqqqqqq
 
 
 
