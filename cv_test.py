@@ -4,14 +4,14 @@
 __author__ = 'sergey'
 
 
-import sys
+# import sys
 
 # sys.path.append('/usr/local/lib/python2.7/site-packages')
-sys.path.append('/usr/lib/python2.7/dist-packages')
+# sys.path.append('/usr/lib/python2.7/dist-packages')
 
-import numpy as np
+# import numpy as np
 import cv2
-# ImportError: /usr/lib/python2.7/dist-packages/cv2.so: undefined symbol: _ZN2cv23adaptiveBilateralFilterERKNS_11_InputArrayERKNS_12_OutputArrayENS_5Size_IiEEddNS_6Point_IiEEi
+
 
 # # Create a black image
 # img = np.zeros((512,512,3), np.uint8)
@@ -147,7 +147,8 @@ while cap.isOpened():
 cap.release()
 out.release()
 cv2.destroyAllWindows()
-qqqqqqq
+
+
 
 
 
