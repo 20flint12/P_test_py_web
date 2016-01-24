@@ -1,15 +1,34 @@
 __author__ = 'sergey'
 
 
-# import pyautogui
-# screenWidth, screenHeight = pyautogui.size()
-# currentMouseX, currentMouseY = pyautogui.position()
-# print currentMouseX, currentMouseY
-# pyautogui.moveTo(100, 150)
-# pyautogui.click()
-#
-#
-# im1 = pyautogui.screenshot()
+import pyautogui
+
+pyautogui.PAUSE = 0.5
+
+screenWidth, screenHeight = pyautogui.size()
+print "screenWidth, screenHeight=", screenWidth, screenHeight
+
+currentMouseX, currentMouseY = pyautogui.position()
+print currentMouseX, currentMouseY
+
+pyautogui.moveTo(1250, 593)
+pyautogui.click()
+
+
+pyautogui.moveTo(1000, 650)
+pyautogui.click()
+
+pos = pyautogui.locateCenterOnScreen('looksLikeThis.png')
+print
+pyautogui.moveTo(pos)
+pyautogui.click()
+
+pyautogui.moveTo(100, 200, 2)   # moves mouse to X of 100, Y of 200 over 2 seconds
+
+pyautogui.click()
+pyautogui.typewrite('Hello world!\n', interval=0.25)  # prints out "Hello world!" with a quarter second delay after each character
+
+im1 = pyautogui.screenshot()
 # im1.save('my_screenshot.png')
 # im2 = pyautogui.screenshot('my_screenshot2.png')
 
@@ -61,23 +80,23 @@ __author__ = 'sergey'
 
 
 
-from Tkinter import *
-
-root = Tk()
-
-def key(event):
-    print "pressed", repr(event.char)
-
-def callback(event):
-    frame.focus_set()
-    print "clicked at", event.x, event.y
-
-frame = Frame(root, width=100, height=100)
-frame.bind("<Key>", key)
-frame.bind("<Button-1>", callback)
-frame.pack()
-
-root.mainloop()
+# from Tkinter import *
+#
+# root = Tk()
+#
+# def key(event):
+#     print "pressed", repr(event.char)
+#
+# def callback(event):
+#     frame.focus_set()
+#     print "clicked at", event.x, event.y
+#
+# frame = Frame(root, width=100, height=100)
+# frame.bind("<Key>", key)
+# frame.bind("<Button-1>", callback)
+# frame.pack()
+#
+# root.mainloop()
 
 
 
