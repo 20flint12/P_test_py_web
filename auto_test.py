@@ -3,6 +3,7 @@ __author__ = 'sergey'
 
 import pyautogui
 screenWidth, screenHeight = pyautogui.size()
+print
 currentMouseX, currentMouseY = pyautogui.position()
 print currentMouseX, currentMouseY
 pyautogui.moveTo(100, 150)
