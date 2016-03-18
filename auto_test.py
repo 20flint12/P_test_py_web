@@ -5,32 +5,71 @@ import pyautogui
 
 pyautogui.PAUSE = 0.5
 
-screenWidth, screenHeight = pyautogui.size()
-print "screenWidth, screenHeight=", screenWidth, screenHeight
+# screenWidth, screenHeight = pyautogui.size()
+# print "screenWidth, screenHeight=", screenWidth, screenHeight
+#
+# currentMouseX, currentMouseY = pyautogui.position()
+# print currentMouseX, currentMouseY
+#
+# pyautogui.moveTo(1250, 593)
+# pyautogui.click()
+#
+#
+# pyautogui.moveTo(1000, 650)
+# pyautogui.click()
+#
+# pos = pyautogui.locateCenterOnScreen('looksLikeThis.png')
+# print pos
+#
+# if pos:
+#     pyautogui.moveTo(pos)
+#     pyautogui.click()
+#
+#     pyautogui.moveTo(100, 200, 2)   # moves mouse to X of 100, Y of 200 over 2 seconds
+#     pyautogui.click()
+#
+# # pyautogui.typewrite('Hello world!\n', interval=0.25)  # prints out "Hello world!" with a quarter second delay after each character
+#
+# # im1 = pyautogui.screenshot()
+# # # im1.save('my_screenshot.png')
+# # # im2 = pyautogui.screenshot('my_screenshot2.png')
 
-currentMouseX, currentMouseY = pyautogui.position()
-print currentMouseX, currentMouseY
 
-pyautogui.moveTo(1250, 593)
-pyautogui.click()
+import time
 
+while True:
 
-pyautogui.moveTo(1000, 650)
-pyautogui.click()
+    pyautogui.moveTo(1000, 650)
+    pyautogui.dragTo(1200, 690, duration=2)  # drag mouse to XY
+    pyautogui.dragRel(-200, -40, duration=2)  # drag mouse relative to its current position
 
-pos = pyautogui.locateCenterOnScreen('looksLikeThis.png')
-print
-pyautogui.moveTo(pos)
-pyautogui.click()
+    time.sleep(5)
 
-pyautogui.moveTo(100, 200, 2)   # moves mouse to X of 100, Y of 200 over 2 seconds
+    pos = pyautogui.locateCenterOnScreen('dark_drop_el.png')
+    print pos
+    if pos:
+        print pos
+        pyautogui.moveTo(pos)
+        pyautogui.click()
 
-pyautogui.click()
-pyautogui.typewrite('Hello world!\n', interval=0.25)  # prints out "Hello world!" with a quarter second delay after each character
+    pos = pyautogui.locateCenterOnScreen('drop_el.png')
+    print pos
+    if pos:
+        print pos
+        for p in pos:
+            pyautogui.moveTo(p)
+            pyautogui.click()
+            time.sleep(1)
 
-im1 = pyautogui.screenshot()
-# im1.save('my_screenshot.png')
-# im2 = pyautogui.screenshot('my_screenshot2.png')
+    pos = pyautogui.locateCenterOnScreen('play.png')
+    print pos
+    if pos:
+        print pos
+        pyautogui.moveTo(pos)
+        pyautogui.click()
+
+    time.sleep(1)
+
 
 
 
