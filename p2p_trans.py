@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-1
 
-# __author__ = 'sergey'
-#
-#
-# import stun
-# nat_type, external_ip, external_port = stun.get_ip_info()
-# print "1)", nat_type, external_ip, external_port
-#
-#
+__author__ = 'sergey'
+
+
+import stun
+nat_type, external_ip, external_port = stun.get_ip_info()
+print "1)", nat_type, external_ip, external_port
+
+
 # # nat_type, external_ip, external_port = \
 # #     stun.get_ip_info(stun_host='stun.ekiga.net')
 # nat_type, external_ip, external_port = \
@@ -21,12 +21,12 @@
 #
 #
 # external_ip = "localhost"
-#
-# SERVER_IP = external_ip
-# SERVER_PORT = external_port
-# print "====================", SERVER_IP, SERVER_PORT
-#
-#
+
+SERVER_IP = external_ip
+SERVER_PORT = external_port
+print "====================", SERVER_IP, SERVER_PORT
+
+
 # import time
 # import datetime
 # import os
@@ -88,9 +88,12 @@ port = "5556"
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:%s" % port)
+# socket.bind("tcp://*:%s" % SERVER_PORT)
+
+# str_tcp = "tcp://%s:%s" % (SERVER_IP, SERVER_PORT)
+# socket.bind(str_tcp)
 
 
-socket.bind("tcp://*:%s" % port)
 
 while True:
     #  Wait for next request from client

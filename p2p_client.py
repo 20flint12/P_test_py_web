@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-1
 
-# __author__ = 'sergey'
-#
+__author__ = 'sergey'
+
 #
 # import stun
 # nat_type, external_ip, external_port = stun.get_ip_info()
@@ -18,15 +18,19 @@
 #
 # nat_type, external_ip, external_port = stun.get_ip_info(stun_port=3478)
 # print "3)", nat_type, external_ip, external_port
-#
-#
-# external_ip = "localhost"
-#
+
+
+external_ip = "localhost"
+
 # SERVER_IP = external_ip
 # SERVER_PORT = external_port
-# print "====================", SERVER_IP, SERVER_PORT
-#
-#
+
+SERVER_IP = "159.224.16.136"
+SERVER_PORT = "54320"
+
+print "====================", SERVER_IP, SERVER_PORT
+
+
 # import time
 # import datetime
 # import os
@@ -86,19 +90,22 @@ import sys
 
 port = "5556"
 
-port1 = "5557"
+# port1 = port #"5557"
 
 
 context = zmq.Context()
 print "Connecting to server..."
 socket = context.socket(zmq.REQ)
+
 socket.connect ("tcp://localhost:%s" % port)
 
-socket.connect ("tcp://localhost:%s" % port1)
+# str_tcp = "tcp://" + SERVER_IP + ":" + str(SERVER_PORT)
+# socket.connect(str_tcp)
+
 
 
 #  Do 10 requests, waiting each time for a response
-for request in range (1,10):
+for request in range (1,10000):
     print "Sending request ", request,"..."
     socket.send ("Hello")
     #  Get the reply.
